@@ -7,7 +7,7 @@ let knownPosts = []; // список уже известных постов
 
 export async function checkAkorda(bot) {
   const currentDate = new Date();
-  const hours = String(currentDate.getHours()).padStart(2, "0");
+  const hours = String((currentDate.getHours() + 7) % 24).padStart(2, "0");
   const minutes = String(currentDate.getMinutes()).padStart(2, "0");
   const seconds = String(currentDate.getSeconds()).padStart(2, "0");
 
@@ -22,7 +22,7 @@ export async function checkAkorda(bot) {
     );
     if (newPosts.length > 0) {
       console.log(
-        `[${parseInt(hours) + 7}:${minutes}:${seconds}] На сайте Акорда Новые посты`
+        `[${hours}:${minutes}:${seconds}] На сайте Акорда Новые посты`
       );
       newPosts.forEach((post) => {
         console.log(`${post.title}: ${post.link}`);
@@ -38,7 +38,7 @@ export async function checkAkorda(bot) {
     } else {
       const currentDate = new Date();
       console.log(
-        `[${parseInt(hours) + 7}:${minutes}:${seconds}] На сайте Акорда нет новых постов.`
+        `[${hours}:${minutes}:${seconds}] На сайте Акорда нет новых постов.`
       );
     }
   } catch (err) {
