@@ -22,7 +22,7 @@ export async function checkAkorda(bot) {
     );
     if (newPosts.length > 0) {
       console.log(
-        `[${hours + 7}:${minutes}:${seconds}] На сайте Акорда Новые посты`
+        `[${parseInt(hours) + 7}:${minutes}:${seconds}] На сайте Акорда Новые посты`
       );
       newPosts.forEach((post) => {
         console.log(`${post.title}: ${post.link}`);
@@ -38,7 +38,7 @@ export async function checkAkorda(bot) {
     } else {
       const currentDate = new Date();
       console.log(
-        `[${hours + 7}:${minutes}:${seconds}] На сайте Акорда нет новых постов.`
+        `[${parseInt(hours) + 7}:${minutes}:${seconds}] На сайте Акорда нет новых постов.`
       );
     }
   } catch (err) {
