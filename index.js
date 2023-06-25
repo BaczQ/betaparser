@@ -4,6 +4,7 @@ import { checkAkorda } from "./checkAkorda.js";
 const token = "6250798032:AAGgelPs4SjqQCUsRlNOL9_zepLhc6ItK30";
 const bot = new TelegramBot(token, { polling: true });
 
+
 async function runBot() {
   console.log(" ");
 
@@ -13,11 +14,12 @@ async function runBot() {
 }
 
 runBot();
+sendOkMessage();
 setInterval(sendOkMessage, 14400000);
 
 // Функция для отправки сообщения "ок"
 function sendOkMessage() {
-  bot.sendMessage("@test222d", "Программа работает хорошо", {
+  bot.sendMessage("@servk3", "Программа testbot работает хорошо", {
     disable_notification: true,
   });
 }

@@ -27,7 +27,7 @@ export async function checkAkorda(bot) {
       newPosts.forEach((post) => {
         console.log(`${post.title}: ${post.link}`);
         bot.sendMessage(
-          "@test222d",
+          "@parserK3",
           `${post.title}: https://www.akorda.kz${post.link}`
         );
       });
@@ -43,10 +43,10 @@ export async function checkAkorda(bot) {
     }
   } catch (err) {
     console.error("Ошибка при получении RSS-ленты сайта Акорда: \n", err);
-    /*bot.sendMessage(
-      "@test222d",
+    bot.sendMessage(
+      "@servK3",
       "Ошибка при получении RSS-ленты сайта Акорда:" + err
-    );*/
+    );
 
     setTimeout(() => {
       console.log("Повторяем");
